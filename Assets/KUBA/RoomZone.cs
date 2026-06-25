@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class RoomZone : MonoBehaviour
 {
-    [Header("Przypisz drzwi do tego pokoju")]
     public DoorController roomDoor;
 
     private AmbientManager ambientManager;

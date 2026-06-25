@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639179989217110023
+  lastModified: 639180001394586589
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639179989218076296
+  lastModified: 639180003075474603
   FileSizes:
   - Name: Desktop
-    Value: 363296
+    Value: 921856
   Exists: 1
 --- !u!114 &-6998978724167770787
 MonoBehaviour:
@@ -164,6 +164,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4230748753805778361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tavern_SFX/Mices
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tavern_SFX/Mices
+  Guid:
+    Data1: -272934600
+    Data2: 1280624395
+    Data3: -1671474790
+    Data4: -1212393741
+  Banks:
+  - {fileID: -8818965472288347319}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 2
+  MaxDistance: 12
+  Length: 28368
 --- !u!114 &-3179500034803305184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,13 +336,15 @@ MonoBehaviour:
   - {fileID: 8219819802207118626}
   - {fileID: 4025682842903000170}
   - {fileID: 1107853981880654443}
+  - {fileID: 9209688020132546810}
+  - {fileID: -4230748753805778361}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8874978091121223657}
   StringsBanks:
   - {fileID: 8661808390533873124}
   cacheVersion: 131859
-  cacheTime: 639179993565951029
+  cacheTime: 639180003075474603
   SerializableEventsDict:
   - key: event:/Player/Footsteps
     index: 0
@@ -329,6 +358,10 @@ MonoBehaviour:
     index: 4
   - key: event:/Ambient/GlobalAmbient
     index: 5
+  - key: event:/Tavern_SFX/Campfire
+    index: 6
+  - key: event:/Tavern_SFX/Mices
+    index: 7
 --- !u!114 &1107853981880654443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,8 +591,35 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639179989217127769
+  lastModified: 639180001394601713
   FileSizes:
   - Name: Desktop
-    Value: 1294
+    Value: 1392
   Exists: 1
+--- !u!114 &9209688020132546810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tavern_SFX/Campfire
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tavern_SFX/Campfire
+  Guid:
+    Data1: 2141195825
+    Data2: 1102783412
+    Data3: -501216071
+    Data4: -1071946045
+  Banks:
+  - {fileID: -8818965472288347319}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 2
+  MaxDistance: 12
+  Length: 20000

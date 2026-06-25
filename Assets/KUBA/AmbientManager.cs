@@ -12,7 +12,7 @@ public class AmbientManager : MonoBehaviour
         ambientInstance = RuntimeManager.CreateInstance(ambientEvent);
         ambientInstance.start();
 
-        // NOWE: Zaczynamy na zewnątrz (wartość 0)
+        // Zaczynamy na zewnątrz (wartość 0)
         ambientInstance.setParameterByName("InsideOutside", 0f);
     }
 
