@@ -4,7 +4,7 @@ using UnityEngine;
 using FMODUnity;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerController : MonoBehaviour
+public class FPSController : MonoBehaviour
 {
     public Camera playerCamera;
     public float walkSpeed = 6f;
@@ -24,15 +24,24 @@ public class PlayerController : MonoBehaviour
 
     [Header("FMOD Audio")]
     public EventReference footstepEvent;
+    public EventReference jumpEvent;
+    public EventReference landEvent;
+
     public float walkStepInterval = 0.5f;
     public float runStepInterval = 0.35f;
     private float stepTimer = 99f;
+
+    // Zmienna do śledzenia czy gracz był na ziemi w poprzedniej klatce
+    private bool wasGrounded;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // Na starcie ustawiamy domyślną wartość
+        wasGrounded = characterController.isGrounded;
     }
 
     void Update()
@@ -53,6 +62,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpPower;
+            // Odpalamy dźwięk skoku natychmiast po wybiciu
+            PlaySurfaceSound(jumpEvent, false, false);
         }
         else
         {
@@ -78,6 +89,13 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         UpdateFootsteps(isRunning);
+
+        // Logika wykrywania lądowania
+        if (characterController.isGrounded && !wasGrounded)
+        {
+            PlaySurfaceSound(landEvent, false, false);
+        }
+        wasGrounded = characterController.isGrounded;
     }
 
     // Logika odtwarzania kroków
@@ -85,53 +103,51 @@ public class PlayerController : MonoBehaviour
     {
         stepTimer += Time.deltaTime;
 
-        // Sprawdzenie czy gracz stoi na ziemi
         if (!characterController.isGrounded) return;
 
-        // Sprawdzamy prędkość poruszania się
         Vector3 horizontalVelocity = new Vector3(characterController.velocity.x, 0, characterController.velocity.z);
 
         if (horizontalVelocity.magnitude > 0.1f)
         {
-            // Dobieramy odpowiedni interwał czasowy (bieg vs chód)
             float currentInterval = isRunning ? runStepInterval : walkStepInterval;
 
-            // Dźwięk zagra TYLKO wtedy, gdy od poprzedniego kroku minęło odpowiednio dużo czasu
             if (stepTimer >= currentInterval)
             {
-                // Przekazujemy zmienną isRunning do metody odtwarzającej dźwięk
-                PlayFootstepSound(isRunning);
+                PlaySurfaceSound(footstepEvent, true, isRunning);
                 stepTimer = 0f;
             }
         }
     }
 
-    // Metoda przyjmuje teraz parametr bool określający czy gracz biega
-    void PlayFootstepSound(bool isRunning)
+    // Główna, uniwersalna metoda obsługująca WSZYSTKIE dźwięki zależne od podłoża
+    void PlaySurfaceSound(EventReference eventRef, bool setRunningParam, bool isRunning)
     {
-        FMOD.Studio.EventInstance footstepInstance = RuntimeManager.CreateInstance(footstepEvent);
-        footstepInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
+        FMOD.Studio.EventInstance instance = RuntimeManager.CreateInstance(eventRef);
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
 
         string surfaceTag = "Wood";
-
         RaycastHit hit;
         float rayDistance = (characterController.height / 2f) + 0.3f;
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, rayDistance))
         {
-            if (hit.collider.CompareTag("Wood") || hit.collider.CompareTag("Stone") || hit.collider.CompareTag("Stairs"))
+            if (hit.collider.CompareTag("Wood") || hit.collider.CompareTag("Stone") ||
+                hit.collider.CompareTag("Stairs") || hit.collider.CompareTag("Chandelier"))
             {
                 surfaceTag = hit.collider.tag;
             }
         }
 
-        footstepInstance.setParameterByNameWithLabel("Surface", surfaceTag);
+        instance.setParameterByNameWithLabel("Surface", surfaceTag);
 
-        // Przekazujemy stan biegu do FMOD-a (1 jeśli biega, 0 jeśli idzie)
-        float runningValue = isRunning ? 1f : 0f;
-        footstepInstance.setParameterByName("IsRunning", runningValue);
+        // Parametr IsRunning aplikujemy tylko wtedy, kiedy funkcja jest wywołana przez kroki (Parametr setRunningParam = true)
+        if (setRunningParam)
+        {
+            float runningValue = isRunning ? 1f : 0f;
+            instance.setParameterByName("IsRunning", runningValue);
+        }
 
-        footstepInstance.start();
-        footstepInstance.release();
+        instance.start();
+        instance.release();
     }
 }

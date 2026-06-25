@@ -19,6 +19,7 @@ TagManager:
   - NewSpell
   - Inside_wood
   - Stairs
+  - Chandelier
   layers:
   - Default
   - TransparentFX

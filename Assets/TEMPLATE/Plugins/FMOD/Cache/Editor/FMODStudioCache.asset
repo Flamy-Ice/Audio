@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639179942656443246
+  lastModified: 639179950226951857
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639179944692427273
+  lastModified: 639179950228543851
   FileSizes:
   - Name: Desktop
-    Value: 105984
+    Value: 344128
   Exists: 1
 --- !u!114 &-5949487133519347477
 MonoBehaviour:
@@ -55,7 +55,7 @@ MonoBehaviour:
   Name: Surface
   StudioPath: 
   Min: 0
-  Max: 2
+  Max: 3
   Default: 0
   ID:
     data1: 83998134
@@ -66,6 +66,7 @@ MonoBehaviour:
   - Wood
   - Stone
   - Stairs
+  - Chandelier
   Exists: 1
 --- !u!114 &-5722821849597398524
 MonoBehaviour:
@@ -87,6 +88,34 @@ MonoBehaviour:
   - Name: Desktop
     Value: 872
   Exists: 1
+--- !u!114 &-5614235875548308120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Jump
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/Jump
+  Guid:
+    Data1: -1921613011
+    Data2: 1136150256
+    Data3: 1934336701
+    Data4: 2004589490
+  Banks:
+  - {fileID: -8818965472288347319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5976864249524473328}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5019782377948111446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +169,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2009280470159593410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Land
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/Land
+  Guid:
+    Data1: -273352256
+    Data2: 1281844869
+    Data3: 1089822851
+    Data4: 977182112
+  Banks:
+  - {fileID: -8818965472288347319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8323113314987477777}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1354806884820862360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,16 +235,22 @@ MonoBehaviour:
   - {fileID: -8818965472288347319}
   EditorEvents:
   - {fileID: -3179500034803305184}
+  - {fileID: -5614235875548308120}
+  - {fileID: -2009280470159593410}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8874978091121223657}
   StringsBanks:
   - {fileID: 8661808390533873124}
   cacheVersion: 131859
-  cacheTime: 639179944692427273
+  cacheTime: 639179950228543851
   SerializableEventsDict:
   - key: event:/Player/Footsteps
     index: 0
+  - key: event:/Player/Jump
+    index: 1
+  - key: event:/Player/Land
+    index: 2
 --- !u!114 &2155319045441102536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +326,62 @@ MonoBehaviour:
   - Stone
   - Stairs
   Exists: 1
+--- !u!114 &5976864249524473328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/Surface
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Surface
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 83998134
+    data2: 2593495622
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Wood
+  - Stone
+  - Stairs
+  - Chandelier
+  Exists: 1
+--- !u!114 &8323113314987477777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Land/Surface
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Surface
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 83998134
+    data2: 2593495622
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Wood
+  - Stone
+  - Stairs
+  - Chandelier
+  Exists: 1
 --- !u!114 &8661808390533873124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,8 +397,8 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639179942656458414
+  lastModified: 639179950226972496
   FileSizes:
   - Name: Desktop
-    Value: 924
+    Value: 1006
   Exists: 1

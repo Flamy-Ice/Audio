@@ -624,6 +624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavern
       objectReference: {fileID: 0}
+    - target: {fileID: 1688124427241254, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      propertyPath: m_TagString
+      value: Chandelier
+      objectReference: {fileID: 0}
     - target: {fileID: 4369231821530882, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9713624
@@ -2559,6 +2563,20 @@ MonoBehaviour:
       Data3: 598831003
       Data4: 2012345223
     Path: event:/Player/Footsteps
+  jumpEvent:
+    Guid:
+      Data1: -1921613011
+      Data2: 1136150256
+      Data3: 1934336701
+      Data4: 2004589490
+    Path: event:/Player/Jump
+  landEvent:
+    Guid:
+      Data1: -273352256
+      Data2: 1281844869
+      Data3: 1089822851
+      Data4: 977182112
+    Path: event:/Player/Land
   walkStepInterval: 0.5
   runStepInterval: 0.35
 --- !u!143 &613997990
