@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{edb7d40e-7c6b-4e4b-8de3-60cd7c65040e}">
+		<property name="assetPath">
+			<value>sfx/player/jump/wood/sfx_player_jump_wood_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.27863945578231292</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6df286b7-a239-4c36-a678-0e5a7451ad25}</destination>
+		</relationship>
+	</object>
+</objects>

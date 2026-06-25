@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{43162a65-85e1-4e32-9f72-4f7d7d607175}">
+		<property name="assetPath">
+			<value>sfx/doors/sfx_doors_open.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.0065312500000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6df286b7-a239-4c36-a678-0e5a7451ad25}</destination>
+		</relationship>
+	</object>
+</objects>

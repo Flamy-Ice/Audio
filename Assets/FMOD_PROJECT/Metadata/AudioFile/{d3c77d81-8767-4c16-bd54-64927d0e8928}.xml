@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{d3c77d81-8767-4c16-bd54-64927d0e8928}">
+		<property name="assetPath">
+			<value>sfx/player/jump/stairs/sfx_player_jump_stairs_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.44117913832199546</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6df286b7-a239-4c36-a678-0e5a7451ad25}</destination>
+		</relationship>
+	</object>
+</objects>

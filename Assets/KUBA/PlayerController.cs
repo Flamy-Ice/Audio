@@ -4,7 +4,7 @@ using UnityEngine;
 using FMODUnity;
 
 [RequireComponent(typeof(CharacterController))]
-public class FPSController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public Camera playerCamera;
     public float walkSpeed = 6f;
@@ -99,39 +99,38 @@ public class FPSController : MonoBehaviour
             // Dźwięk zagra TYLKO wtedy, gdy od poprzedniego kroku minęło odpowiednio dużo czasu
             if (stepTimer >= currentInterval)
             {
-                PlayFootstepSound();
+                // Przekazujemy zmienną isRunning do metody odtwarzającej dźwięk
+                PlayFootstepSound(isRunning);
                 stepTimer = 0f;
             }
         }
     }
 
-    void PlayFootstepSound()
+    // Metoda przyjmuje teraz parametr bool określający czy gracz biega
+    void PlayFootstepSound(bool isRunning)
     {
         FMOD.Studio.EventInstance footstepInstance = RuntimeManager.CreateInstance(footstepEvent);
-
-        // Ustawiamy pozycję 3D dźwięku na pozycji gracza
         footstepInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
 
-        // Domyślny tag, jeśli raycast w nic nie trafi lub trafi w obiekt bez odpowiedniego tagu
         string surfaceTag = "Wood";
 
         RaycastHit hit;
-        // Wystrzeliwujemy promień w dół
         float rayDistance = (characterController.height / 2f) + 0.3f;
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, rayDistance))
         {
-            // Sprawdzamy, czy obiekt pod nami ma jeden z interesujących nas tagów
             if (hit.collider.CompareTag("Wood") || hit.collider.CompareTag("Stone") || hit.collider.CompareTag("Stairs"))
             {
                 surfaceTag = hit.collider.tag;
             }
         }
 
-        // Przekazujemy nazwę tagu bezpośrednio jako Label do parametru "Surface" we FMOD
         footstepInstance.setParameterByNameWithLabel("Surface", surfaceTag);
 
-        //NOWE: Uruchamiamy dźwięk i od razu dajemy FMOD-owi znak, że po zakończeniu odtwarzania ma posprzątać pamięć
+        // Przekazujemy stan biegu do FMOD-a (1 jeśli biega, 0 jeśli idzie)
+        float runningValue = isRunning ? 1f : 0f;
+        footstepInstance.setParameterByName("IsRunning", runningValue);
+
         footstepInstance.start();
         footstepInstance.release();
     }
