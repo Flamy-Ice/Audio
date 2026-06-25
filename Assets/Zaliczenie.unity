@@ -630,23 +630,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4369231821530882, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9713624
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4369231821530882, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4369231821530882, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.23760284
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4369231821530882, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4369231821530882, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 27.49
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4446057377279770, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -690,27 +690,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4626744778418910, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8539698
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626744778418910, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4626744778418910, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5203227
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626744778418910, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4626744778418910, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -62.708
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4817250685102828, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9713624
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817250685102828, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4817250685102828, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.23760284
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817250685102828, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4817250685102828, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 27.49
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4920983588138262, guid: cb181bc6c302bca40929333077286a04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -752,6 +768,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1330636291972076, guid: cb181bc6c302bca40929333077286a04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 159108037}
+    - targetCorrespondingSourceObject: {fileID: 1742205292912966, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1685734638}
+    - targetCorrespondingSourceObject: {fileID: 1870896476324792, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616632611}
+    - targetCorrespondingSourceObject: {fileID: 1878543480056916, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1584350884}
   m_SourcePrefab: {fileID: 100100000, guid: cb181bc6c302bca40929333077286a04, type: 3}
 --- !u!1 &159108029 stripped
 GameObject:
@@ -2433,6 +2458,7 @@ GameObject:
   - component: {fileID: 613997993}
   - component: {fileID: 613997990}
   - component: {fileID: 613997989}
+  - component: {fileID: 613997994}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2631,6 +2657,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &613997994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613997984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4469b06ccf57fb345a52ee543ed54bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+--- !u!1 &616632606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1870896476324792, guid: cb181bc6c302bca40929333077286a04, type: 3}
+  m_PrefabInstance: {fileID: 159108028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &616632611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616632606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c09b3c2a31de084b93275cffdf5b7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorController
+  openAngle: 270
+  speed: 3
+  openEvent:
+    Guid:
+      Data1: -1356996951
+      Data2: 1198841279
+      Data3: 275877295
+      Data4: -1354509477
+    Path: event:/Doors/DoorOpen
+  closeEvent:
+    Guid:
+      Data1: 1745251637
+      Data2: 1133297231
+      Data3: -959925072
+      Data4: 79423605
+    Path: event:/Doors/DoorClose
 --- !u!1 &688602384
 GameObject:
   m_ObjectHideFlags: 0
@@ -4941,6 +5012,39 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1584350879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1878543480056916, guid: cb181bc6c302bca40929333077286a04, type: 3}
+  m_PrefabInstance: {fileID: 159108028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584350884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584350879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c09b3c2a31de084b93275cffdf5b7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorController
+  openAngle: 270
+  speed: 3
+  openEvent:
+    Guid:
+      Data1: -1356996951
+      Data2: 1198841279
+      Data3: 275877295
+      Data4: -1354509477
+    Path: event:/Doors/DoorOpen
+  closeEvent:
+    Guid:
+      Data1: 1745251637
+      Data2: 1133297231
+      Data3: -959925072
+      Data4: 79423605
+    Path: event:/Doors/DoorClose
 --- !u!1 &1602359161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5643,6 +5747,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2131066730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1685734633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1742205292912966, guid: cb181bc6c302bca40929333077286a04, type: 3}
+  m_PrefabInstance: {fileID: 159108028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1685734638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685734633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c09b3c2a31de084b93275cffdf5b7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorController
+  openAngle: 270
+  speed: 3
+  openEvent:
+    Guid:
+      Data1: -1356996951
+      Data2: 1198841279
+      Data3: 275877295
+      Data4: -1354509477
+    Path: event:/Doors/DoorOpen
+  closeEvent:
+    Guid:
+      Data1: 1745251637
+      Data2: 1133297231
+      Data3: -959925072
+      Data4: 79423605
+    Path: event:/Doors/DoorClose
 --- !u!1 &1694079563
 GameObject:
   m_ObjectHideFlags: 0

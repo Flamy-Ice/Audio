@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639179950226951857
+  lastModified: 639179960519520847
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639179950228543851
+  lastModified: 639179960520517245
   FileSizes:
   - Name: Desktop
-    Value: 344128
+    Value: 363296
   Exists: 1
 --- !u!114 &-5949487133519347477
 MonoBehaviour:
@@ -237,13 +237,15 @@ MonoBehaviour:
   - {fileID: -3179500034803305184}
   - {fileID: -5614235875548308120}
   - {fileID: -2009280470159593410}
+  - {fileID: 8219819802207118626}
+  - {fileID: 4025682842903000170}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8874978091121223657}
   StringsBanks:
   - {fileID: 8661808390533873124}
   cacheVersion: 131859
-  cacheTime: 639179950228543851
+  cacheTime: 639179960520517245
   SerializableEventsDict:
   - key: event:/Player/Footsteps
     index: 0
@@ -251,6 +253,10 @@ MonoBehaviour:
     index: 1
   - key: event:/Player/Land
     index: 2
+  - key: event:/Doors/DoorClose
+    index: 3
+  - key: event:/Doors/DoorOpen
+    index: 4
 --- !u!114 &2155319045441102536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +305,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1074
   Exists: 1
+--- !u!114 &4025682842903000170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Doors/DoorOpen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Doors/DoorOpen
+  Guid:
+    Data1: -1356996951
+    Data2: 1198841279
+    Data3: 275877295
+    Data4: -1354509477
+  Banks:
+  - {fileID: -8818965472288347319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4672214052669528195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +387,33 @@ MonoBehaviour:
   - Stairs
   - Chandelier
   Exists: 1
+--- !u!114 &8219819802207118626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Doors/DoorClose
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Doors/DoorClose
+  Guid:
+    Data1: 1745251637
+    Data2: 1133297231
+    Data3: -959925072
+    Data4: 79423605
+  Banks:
+  - {fileID: -8818965472288347319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8323113314987477777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,8 +457,8 @@ MonoBehaviour:
   Path: Assets/FMOD_PROJECT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639179950226972496
+  lastModified: 639179960519536106
   FileSizes:
   - Name: Desktop
-    Value: 1006
+    Value: 1112
   Exists: 1
