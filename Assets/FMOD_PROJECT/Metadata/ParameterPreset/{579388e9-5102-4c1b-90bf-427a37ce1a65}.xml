@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{579388e9-5102-4c1b-90bf-427a37ce1a65}">
+		<property name="name">
+			<value>InsideOutside</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ef00d660-3f39-40eb-bdee-17d143a58ad1}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{774e1315-c954-43ed-aff2-7173cf4ad3b3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{774e1315-c954-43ed-aff2-7173cf4ad3b3}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{90e61554-0272-473c-959b-57ffa3b14e82}</destination>
+		</relationship>
+	</object>
+	<object class="SeekModulator" id="{90e61554-0272-473c-959b-57ffa3b14e82}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="speedAscending">
+			<value>0.75</value>
+		</property>
+	</object>
+</objects>

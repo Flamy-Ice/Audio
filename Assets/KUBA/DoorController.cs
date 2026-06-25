@@ -7,7 +7,7 @@ public class DoorController : MonoBehaviour
     public float openAngle = 90f;
     public float speed = 3f;
 
-    private bool isOpen = false;
+    public bool isOpen = false;
     private Quaternion defaultRotation;
     private Quaternion openRotation;
 
